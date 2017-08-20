@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row page-header">
+    <div class="col-sm-12">
+      <h1>Twitch Stream Search</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-12">
+      <app-search-box (loading)="loading=$event" (results)="updateResults($event)"></app-search-box>
+    </div>
+  </div>
+  <div class="row" *ngIf="loading">
+    <div class="col-sm-12">Loading...</div>
+  </div>
+  <div class="row card-deck">
+    <app-search-result *ngFor="let result of results" [result]="result"  class="card"></app-search-result>
+  </div>
+</div>

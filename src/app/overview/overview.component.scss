@@ -1,0 +1,18 @@
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+@import '~bootstrap/scss/_mixins.scss';
+
+.card {
+    flex: 0 0 calc(100% - 30px);
+    margin: 15px;;
+    @include media-breakpoint-up(lg) {
+        flex: 0 0 calc(50% - 30px);
+    }
+    @include media-breakpoint-up(xl) {
+        flex: 0 0 calc(33.33% - 30px);
+    }
+}
+
+.page-header {
+    padding: 40px 0 20px;
+}
