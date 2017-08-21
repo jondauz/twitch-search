@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchResult } from '../search-result.model';
+import { StreamOverview } from '../_models/stream-overview.model';
+
+import { TwitchService } from '../_services/twitch.service';
 
 @Component({
   selector: 'app-overview',
@@ -8,16 +10,24 @@ import { SearchResult } from '../search-result.model';
 })
 export class OverviewComponent implements OnInit {
 
-  results: SearchResult[];
+  results: StreamOverview[];
   loading: boolean;
 
-  constructor() { }
+  constructor(
+    private twitch: TwitchService
+  ) { }
 
-  updateResults(results: SearchResult[]): void {
+  updateResults(results: StreamOverview[]): void {
     this.results = results;
   }
 
   ngOnInit() {
+    this.loading = true;
+    this.twitch.getFeaturedStreams()
+      .subscribe((results) => {
+        this.results = results; 
+        this.loading = false;
+      });
   }
 
 }

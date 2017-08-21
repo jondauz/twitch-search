@@ -1,4 +1,4 @@
-import { TwitchService, TWITCH_CLIENT_ID, TWITCH_API_URL } from './twitch.service';
+import { TwitchService, TWITCH_CLIENT_ID, TWITCH_API_URL } from './_services/twitch.service';
 
 export const TwitchInjectables: Array<any> = [
   {provide: TwitchService, useClass: TwitchService},

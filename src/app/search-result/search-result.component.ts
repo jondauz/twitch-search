@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SearchResult } from '../search-result.model';
+import { StreamOverview } from '../_models/stream-overview.model';
 
 @Component({
   selector: 'app-search-result',
@@ -8,7 +8,7 @@ import { SearchResult } from '../search-result.model';
 })
 export class SearchResultComponent implements OnInit {
 
-  @Input() result: SearchResult;
+  @Input() result: StreamOverview;
 
   constructor() { }
 

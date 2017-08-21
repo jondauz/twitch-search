@@ -6,8 +6,11 @@
   </div>
   <div class="row">
     <div class="form-group col-sm-12">
-      <app-search-box (loading)="loading=$event" (results)="updateResults($event)"></app-search-box>
+      <app-search-box (loading)="loading=$event" (results)="updateResults($event)" (searchTotal)="searchTotal=$event"></app-search-box>
     </div>
+  </div>
+  <div *ngIf="searchTotal>0&&!loading">
+    {{ searchTotal }}
   </div>
   <div class="row" *ngIf="loading">
     <div class="col-sm-12">Loading...</div>

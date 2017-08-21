@@ -1,4 +1,4 @@
-export class SearchResult {
+export class StreamOverview {
 
     id: number;
     title: string;
